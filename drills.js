@@ -17,7 +17,27 @@ const knex = require('knex')({
 }
 */
 
-// Sample select 
-knex.select('id', 'name', 'borough', 'cuisine')
-    .from('restaurants')
+// Sample select
+// knex.select('id', 'name', 'borough', 'cuisine')
+//     .from('restaurants')
+//     .then(results => console.log(results));
+// knex.select('id', 'name', 'borough', 'cuisine')
+//     .from('restaurants')
+//     .where('cuisine', 'Italian')
+//     .then(results => console.log(results));
+// knex.select('id', 'name')
+//     .from('restaurants')
+//     .where('cuisine', 'Italian')
+//     .limit(10)
+//     .then(results => console.log(results));
+// knex('restaurants')
+//     .count()
+//     .where('cuisine', 'Thai')
+//     .then(results => console.log(results));
+// knex('restaurants')
+//     .count()
+//     .then(results => console.log(results));
+knex('restaurants')
+    .count()
+    .where({cuisine: 'Thai', address_zipcode: '11372'})
     .then(results => console.log(results));
